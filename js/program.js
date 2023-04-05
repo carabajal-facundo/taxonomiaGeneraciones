@@ -49,3 +49,11 @@ class Persona{
         }
     }
 }
+
+
+
+function agregarPersona(){
+
+}
+
+let persona = [];

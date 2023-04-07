@@ -14,22 +14,35 @@
 </head>
 <body class="bg-primary">
     <main class="container text-center">
-        <section class="formulario">
-            <form>
+        <section>
+            
                 <label for="nombre">Nombre</label>
-                <input name="nombre" type="text" placeholder="Ejemplo: Facundo Carabajal" required>
+                <input name="nombre" id="nombreForm" type="text" placeholder="Ejemplo: Facundo Carabajal" required>
 
-                <label for="dni">DNI:</label>
-                <input name="dni" type="number" placeholder="Ingrese el DNI sin puntos" required>
+                <label for="dni">DNI</label>
+                <input name="dni" id="dniFomr" type="number" placeholder="Ingrese el DNI sin puntos" required>
+                
+                <label for="edad">Edad</label>
+                <input name="edad" id="edadForm" type="number" placeholder="Ingrese su edad, Ej: 25" required>
+                
+                <input id="h" type="radio" value="H" name="sexo">
+                <label for="h">Hombre</label>
+                <input id="m" type="radio" value="M" name="sexo">
+                <label for="m">Mujer</label>
+                
+                <label for="">Peso</label>
+                <input name="peso" id="pesoForm" type="text" placeholder="Ingrese su peso correspondiente" required>
+                
+                <label for="">Altura</label>
+                <input type="text" id="alturaForm" placeholder="Ingrese su altura" required>
 
-                <label for="">Sexo:</label>
-                <input name="sexoH" type="radio" value="H"><label for="sexoH">Hombre</label>
-                <input name="sexoM" type="radio" value="M"><label for="sexoM">Mujer</label>
+                <label for="">Año de nacimiento</label>
+                <input type="number" id="anionacForm" placeholder="Año de nacimiento" required>
 
-                <label for=""></label>
-                <input type="text">
-            </form>
+                <button onclick="agregarPersona()">Generar Persona</button>
+            
         </section>
+
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <script src="/js/program.js"></script>

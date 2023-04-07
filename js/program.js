@@ -1,3 +1,6 @@
+let persona;
+let noOpciones = true;
+
 class Persona{
     #nombre;
     #dni;
@@ -6,9 +9,9 @@ class Persona{
     #peso;
     #altura;
     #anioNac;
-    constructor(nombre,edad,sexo,peso,altura,anioNac){
+    constructor(nombre,edad,sexo,peso,altura,anioNac,dni){
         this.#nombre=nombre;
-        this.generarDNI();
+        this.#dni=dni;
         this.#edad=edad;
         this.#sexo=sexo;
         this.#peso=peso;
@@ -16,20 +19,19 @@ class Persona{
         this.#anioNac=anioNac;
     }
     esMayorDeEdad(){
-        if(this.edad>18) alert("Es mayor de edad");
+        if(parseInt(this.#edad)>18) alert("Es mayor de edad");
         else alert("Es menor de edad");
     }
     mostrarDatos(){
-        document.write("Nombre: " + this.#nombre + "<br>");
-        document.write("Edad: " + this.#edad + "<br>");
-        document.write("DNI: " + this.#dni + "<br>");
-        document.write("Sexo: " + this.#sexo + "<br>");
-        document.write("peso: " + this.#peso + "<br>");
-        document.write("Altura: " + this.#altura + "<br>");
-        document.write("Año de nacimiento: " + this.#anioNac + "<br><br>");
-    }
-    generarDNI(){
-        this.#dni= Math.floor(Math.random() * (100000000-10000000)+10000000);
+        alert(`
+        Nombre: ${this.#nombre}
+        Edad: ${this.#edad}
+        DNI: ${this.#dni}
+        Sexo: ${this.#sexo}
+        peso: ${this.#peso} 
+        Altura: ${this.#altura} 
+        Año de nacimiento: ${this.#anioNac}
+        `);
     }
     mostrarGeneracion(){
         if(this.#anioNac>=1930 && this.#anioNac<=1948){
@@ -50,10 +52,35 @@ class Persona{
     }
 }
 
-
-
 function agregarPersona(){
-
+    let sexoH = document.getElementById('h');
+    let sexo;
+    if(sexoH) sexo = 'H';
+    else sexo = 'M';
+    let nombre = document.getElementById("nombreForm").value;
+    let edad = document.getElementById("edadForm").value;
+    let dni = document.getElementById("dniFomr").value;
+    let peso = document.getElementById("pesoForm").value;
+    let altura = document.getElementById("alturaForm").value;
+    let anioNac = document.getElementById("anionacForm").value;
+    persona = new Persona(nombre,edad,sexo,peso,altura,anioNac,dni);
+    let form = document.querySelector('form');
+    if(noOpciones){
+        generarOpciones();
+        noOpciones=false;
+    }
 }
 
-let persona = [];
+function generarOpciones(){
+    let main = document.querySelector('main');
+    main.innerHTML = `<section class="container">
+    <button class="btn bg-white" onclick="mostrarGen()">Mostrar generacion</button>
+    <button class="btn bg-white" onclick="mayorDeEdad()">Es mayor de edad?</button>
+    <button class="btn bg-white" onclick="mostrarDatos()">MostrarDatos</button>
+</section>`;
+}
+function mostrarGen(){ persona.mostrarGeneracion(); }
+
+function mayorDeEdad(){ persona.esMayorDeEdad(); }
+
+function mostrarDatos(){ persona.mostrarDatos(); }

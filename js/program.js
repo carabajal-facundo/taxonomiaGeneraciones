@@ -55,29 +55,33 @@ class Persona{
 function agregarPersona(){
     let sexoH = document.getElementById('h');
     let sexo;
-    if(sexoH) sexo = 'H';
-    else sexo = 'M';
+    if(sexoH.check) sexo = 'H';
+    else if(document.getElementById('m').check) sexo = 'M';
     let nombre = document.getElementById("nombreForm").value;
     let edad = document.getElementById("edadForm").value;
     let dni = document.getElementById("dniFomr").value;
     let peso = document.getElementById("pesoForm").value;
     let altura = document.getElementById("alturaForm").value;
     let anioNac = document.getElementById("anionacForm").value;
-    persona = new Persona(nombre,edad,sexo,peso,altura,anioNac,dni);
-    let form = document.querySelector('form');
-    if(noOpciones){
-        generarOpciones();
-        noOpciones=false;
+    if(nombre != '' && edad != '' && dni != '' && peso != '' && altura != '' && anioNac != '' && sexo != ''){
+        persona = new Persona(nombre,edad,sexo,peso,altura,anioNac,dni);
+        let form = document.querySelector('form');
+        if(noOpciones){
+            generarOpciones();
+            noOpciones=false;
+        }
     }
 }
 
 function generarOpciones(){
-    let main = document.querySelector('main');
-    main.innerHTML = `<section class="container">
-    <button class="btn bg-white" onclick="mostrarGen()">Mostrar generacion</button>
-    <button class="btn bg-white" onclick="mayorDeEdad()">Es mayor de edad?</button>
-    <button class="btn bg-white" onclick="mostrarDatos()">MostrarDatos</button>
-</section>`;
+    let seccion = document.querySelector('section');
+    let articulo = document.createElement('article');
+    seccion.appendChild(articulo);
+    articulo.innerHTML = `<article class="container">
+    <button class="btn m-4 bg-white" onclick="mostrarGen()">Mostrar generacion</button>
+    <button class="btn m-4 bg-white" onclick="mayorDeEdad()">Es mayor de edad?</button>
+    <button class="btn m-4 bg-white" onclick="mostrarDatos()">MostrarDatos</button>
+</article>`;
 }
 function mostrarGen(){ persona.mostrarGeneracion(); }
 

@@ -13,33 +13,44 @@
     <title>Document</title>
 </head>
 <body class="bg-primary">
-    <main class="container text-center">
-        <section>
-            
-                <label for="nombre">Nombre</label>
-                <input name="nombre" id="nombreForm" type="text" placeholder="Ejemplo: Facundo Carabajal" required>
+    <main>
+        <section class="container bg-secondary-subtle mt-5 border border-secondary border-3 rounded-4">
+            <article class="row d-flex align-items-center">
+                <div class="col-6 mt-2">
+                    <label for="nombre">Nombre</label>
+                    <input class="w-100" name="nombre" id="nombreForm" type="text" placeholder="Ejemplo: Facundo Carabajal" required>
+                </div>
+                <div class="col-6 mt-2">
+                    <label for="dni">DNI</label>
+                    <input class="w-100" name="dni" id="dniFomr" type="number" placeholder="Ingrese el DNI sin puntos" required>
+                </div>
+                <div class="col-6 mt-2">
+                    <label for="edad">Edad</label>
+                    <input class="w-100" name="edad" id="edadForm" type="number" placeholder="Ingrese su edad, Ej: 25" required>
+                </div>
+                
+                <div class="col-6 mt-2">
+                    <p>Sexo</p>
+                    <input id="h" type="radio" value="H" name="sexo">
+                    <label for="h">Masculino</label>
+                    <input id="m" type="radio" value="M" name="sexo">
+                    <label for="m">Femenino</label>
+                </div>
+                <div class="col-6 mt-2">
+                    <label for="">Peso</label>
+                    <input class="w-100" name="peso" id="pesoForm" type="text" placeholder="Ingrese su peso correspondiente" required>
+                </div>
+                <div class="col-6 mt-2">
+                    <label for="">Altura</label>
+                    <input class="w-100" type="text" id="alturaForm" placeholder="Ingrese su altura" required>
+                </div>
+                <div class="col-12 mt-3">
+                    <label for="">Año de nacimiento</label>
+                    <input class="w-50" type="number" id="anionacForm" placeholder="Año de nacimiento" required>
+                </div>
 
-                <label for="dni">DNI</label>
-                <input name="dni" id="dniFomr" type="number" placeholder="Ingrese el DNI sin puntos" required>
-                
-                <label for="edad">Edad</label>
-                <input name="edad" id="edadForm" type="number" placeholder="Ingrese su edad, Ej: 25" required>
-                
-                <input id="h" type="radio" value="H" name="sexo">
-                <label for="h">Hombre</label>
-                <input id="m" type="radio" value="M" name="sexo">
-                <label for="m">Mujer</label>
-                
-                <label for="">Peso</label>
-                <input name="peso" id="pesoForm" type="text" placeholder="Ingrese su peso correspondiente" required>
-                
-                <label for="">Altura</label>
-                <input type="text" id="alturaForm" placeholder="Ingrese su altura" required>
-
-                <label for="">Año de nacimiento</label>
-                <input type="number" id="anionacForm" placeholder="Año de nacimiento" required>
-
-                <button onclick="agregarPersona()">Generar Persona</button>
+                <button class="m-3 btn bg-white w-25" onclick="agregarPersona()">Generar Persona</button>
+            </article>
             
         </section>
 

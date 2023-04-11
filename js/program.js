@@ -55,8 +55,8 @@ class Persona{
 function agregarPersona(){
     let sexoH = document.getElementById('h');
     let sexo;
-    if(sexoH.check) sexo = 'H';
-    else if(document.getElementById('m').check) sexo = 'M';
+    if(sexoH.checked) sexo = 'H';
+    else if(document.getElementById('m').checked) sexo = 'M';
     let nombre = document.getElementById("nombreForm").value;
     let edad = document.getElementById("edadForm").value;
     let dni = document.getElementById("dniFomr").value;
